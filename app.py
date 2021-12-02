@@ -40,6 +40,8 @@ def callback():
     app.logger.info("Request body: " + body)
 
     # handle webhook body
+    print('body = ',body)
+    print('signature = ',signature)
     try:
         handler.handle(body, signature)
     except InvalidSignatureError:
